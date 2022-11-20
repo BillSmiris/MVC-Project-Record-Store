@@ -1,0 +1,82 @@
+﻿@model ergasiamvc.Models.Invoice
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Invoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Invoice Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceDate)
+        </dd>
+
+        <dt>
+            Billing Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingAddress)
+        </dd>
+
+        <dt>
+            Billing City
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingCity)
+        </dd>
+
+        <dt>
+            Billing State
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingState)
+        </dd>
+
+        <dt>
+            Billing Country
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingCountry)
+        </dd>
+
+        <dt>
+            Billing Postal Code
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingPostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            Customer
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FirstName) @Html.DisplayFor(model => model.Customer.LastName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InvoiceId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

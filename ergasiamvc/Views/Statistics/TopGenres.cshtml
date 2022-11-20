@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ergasiamvc.Models.TopGenresModel>
+
+@{
+    ViewBag.Title = "Top Genres";
+}
+
+<h2>Top Genres</h2>
+<h4>Statistics</h4>
+<table class="table mt-5">
+    <tr>
+        <th></th>
+        <th>
+            Genre
+        </th>
+        <th>
+            Sales
+        </th>
+    </tr>
+    @{
+        int i = 1;
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    #@i
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.genre.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.count)
+                </td>
+            </tr>
+            i++;
+        }
+    }
+
+</table>
+<a href="/Statistics/Index">Back</a>

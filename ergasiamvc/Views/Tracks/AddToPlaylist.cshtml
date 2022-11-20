@@ -1,0 +1,112 @@
+﻿@model ergasiamvc.Models.PlaylistSelect
+
+@{
+    ViewBag.Title = "Add To Playlist";
+}
+
+<h2>Add To Playlist</h2>
+
+<div>
+    <h4>Track</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.track.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.track.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.track.Composer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.track.Composer)
+        </dd>
+
+        <dt>
+            Duration(ms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.track.Milliseconds)
+        </dd>
+
+        <dt>
+            Size(bytes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.track.Bytes)
+        </dd>
+
+        <dt>
+            Unit Price
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.track.UnitPrice)
+        </dd>
+
+        <dt>
+            Album
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.track.Album.Title)
+        </dd>
+
+        <dt>
+            Genre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.track.Genre.Name)
+        </dd>
+
+        <dt>
+            Media Type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.track.MediaType.Name)
+        </dd>
+
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Choose a playlist</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.track.TrackId)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="test">Playlist</label>
+            <div class="col-md-10">
+                <select class="form-control" id="test" name="playlistid">
+                    @foreach (var item in Model.pl)
+                    {
+                        if (!Model.track.Playlists.Contains(item)){ 
+                            <option value="@item.PlaylistId">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+@Html.ActionLink("Back to Edit", "Edit", new { id = Model.track.TrackId })

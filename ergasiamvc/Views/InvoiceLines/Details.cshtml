@@ -1,0 +1,50 @@
+﻿@model ergasiamvc.Models.InvoiceLine
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Invoice Line</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Unit Price
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+           Invoice
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invoice.BillingAddress)
+        </dd>
+
+        <dt>
+            Track
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Track.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InvoiceLineId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
