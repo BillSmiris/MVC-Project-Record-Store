@@ -1,0 +1,184 @@
+﻿:root {
+    --background: #121212;
+    --surface: #121212;
+    --primary: #03dac6;
+    --primary-variation: #018786;
+    --on-primary: #000;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: var(--background);
+    color: rgba(255, 255, 255, .87);
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--primary-variation);
+}
+
+#home-jumbotron {
+    background: var(--primary) url(/Content/Images/sunset.gif) no-repeat center center;
+}
+
+.btn-primary {
+  color: var(--on-primary);
+  background-color: var(--primary);
+  border-color: var(--primary);
+  transition: background-color .15s, border-color .15s;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  color: var(--on-primary);
+  background-color: var(--primary-variation);
+  border-color: var(--primary-variation);
+}
+.btn-primary:hover {
+  color: var(--on-primary);
+  background-color: var(--primary-variation);
+  border-color: var(--primary-variation);
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: var(--on-primary);
+  background-color: var(--primary-variation);
+  border-color: var(--primary-variation);
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary.focus {
+  color: var(--on-primary);
+  background-color: var(--primary-variation);
+  border-color: var(--primary-variation);
+}
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+#actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.action-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.action-container > a{
+    text-decoration: none;
+}
+
+@media screen and (min-width: 576px) {
+    .action-container {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .action-container {
+        width: 33.33%;
+    }
+}
+
+.action {
+    /*background-color: var(--primary);
+    color: var(--on-primary);*/
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1rem;
+    box-sizing: content-box;
+    transition: background-color .15s, border .15s;
+}
+
+.action:hover {
+    background-color: var(--primary-variation);
+    border: 1px solid var(--primary-variation);
+}
+
+.action > .glyphicon{
+    font-size: 10rem;
+    position: relative;
+    left: 5rem;
+    top: 5rem;
+}
+
+.action > h2{
+    position: relative;
+    left: 1rem;
+    top: 4rem;
+}
+
+.input-group-addon{
+    background: var(--primary);
+    color: var(--on-primary);
+}
+
+.breadcrumb {
+    width: 100vw;
+    position: fixed;
+    background: var(--primary);
+    color: var(--on-primary);
+    border-radius: 0rem;
+}
+
+.breadcrumb > div > div{
+    display:inline;
+}
+
+.breadcrumb a{
+    color: var(--on-primary);
+
+}
+.breadcrumb > div > div + div:before {
+  padding: 0 5px;
+  color: var(--on-primary);
+  content: "/\00a0";
+}
